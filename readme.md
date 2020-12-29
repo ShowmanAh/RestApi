@@ -20,7 +20,7 @@ The application was built using [Laravel 7], so you should ensure you have it in
 - Filtering by title and registerOn posts reports.
 - Responsive UI.
 - Database Postgres.
-### technologies:
+### Technologies:
 ### Back-End :
 - Laravel 7.2, MVC Architecture Pattern.
 ### Front-End :
@@ -35,7 +35,7 @@ The application was built using [Laravel 7], so you should ensure you have it in
 
 2. Install the application requirements:
 ```composer
- install 
+ composer install 
  php artisan key:generate
 ```
 
