@@ -1,65 +1,64 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Flasky
+This repository contains my code for the [Flask Web Development, 2nd Edition](https://www.amazon.com/Flask-Web-Development-Developing-Applications/dp/1449372627) book.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Flasky is a [Flask](http://flask.pocoo.org/) social blogging application web application in which authenticated users can follow\unfollow each other, as well as creating and editing their own blog posts and comments.
 
-## About Laravel
+### Prerequisites:
+The application was built using [Python 3.7](https://www.python.org/downloads/), so you should ensure you have it installed on your machine.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+You can find the application requirements in the [requirements folder](https://github.com/Mohllal/flasky/tree/master/requirements).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Features:
+- Users registration and logging in subsystem.
+- Users profiles and avatars using the [Gravatar service](https://en.gravatar.com/).
+- Users follow\unfollow subsystem.
+- Markdown support for blog posts.
+- Comments moderation.
+- Secure against Cross-Site Request Forgery (CSRF) attacks.
+- Responsive and elegant UI.
+- RESTful API endpoints.
+- Unit tests.
+- Database migrations.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+### Usage:
+1. Clone this repository to your desktop, go to the ```flasky``` directory and create a new virtual environment to create isolated Python environment.
+**Note: I highly recommend using [Virtualenv](https://virtualenv.pypa.io/en/latest/).**
 
-## Learning Laravel
+2. Install the application requirements:
+```python
+pip install -r requirements\dev.txt
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+2. Create these environnement variables:
+**Note: MAIL_USERNAME and MAIL_PASSWORD environnement variables are necessary for sending confirmation emails to the newly registered users.**
+```python
+set FLASK_APP=run.py
+set MAIL_USERNAME=<your-gmail-email-address>
+set MAIL_PASSWORD=<your-gmail-password>
+```
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+3. Run the CLI ```deploy```command to create the database:
+```python
+flask deploy
+```
+4. If you want to populate the database with some dummy data type:
+```python
+flask shell
+>>> from app.fake import users, posts, follows, comments
+>>> users()
+>>> posts()
+>>> follows()
+>>> comments()
+```
+5. Run the application and go to [localhost:5000](http://127.0.0.1:5000/) to see the application running:
+```python
+flask run
+```
 
-## Laravel Sponsors
+6. You can run the unit tests using the CLI ```test```command:
+```python
+flask test
+```
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### License:
+This software is licensed under the [MIT License](https://opensource.org/licenses/MIT).
