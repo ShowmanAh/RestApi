@@ -1,64 +1,45 @@
-# Flasky
-This repository contains my code for the [Flask Web Development, 2nd Edition](https://www.amazon.com/Flask-Web-Development-Developing-Applications/dp/1449372627) book.
+# Joobly
+This repository contains my code for the [Laravel Web Development](https://laravel.com/docs/7.x) Docs.
 
-Flasky is a [Flask](http://flask.pocoo.org/) social blogging application web application in which authenticated users can follow\unfollow each other, as well as creating and editing their own blog posts and comments.
+Joobly is a [Laravel](http://flask.pocoo.org/) social jobs  web application in which authenticated companies can post jobs and authenticated users can apply jobs, as well as creating and editing their own  posts.
 
 ### Prerequisites:
-The application was built using [Python 3.7](https://www.python.org/downloads/), so you should ensure you have it installed on your machine.
+The application was built using [Laravel 7], so you should ensure you have it installed on your machine.
 
-You can find the application requirements in the [requirements folder](https://github.com/Mohllal/flasky/tree/master/requirements).
+ requirements : PHP >= 7.2.5.
 
 ### Features:
-- Users registration and logging in subsystem.
-- Users profiles and avatars using the [Gravatar service](https://en.gravatar.com/).
-- Users follow\unfollow subsystem.
-- Markdown support for blog posts.
-- Comments moderation.
+- Admins logging in system.
+- SuperAdmin can add/edit/delete admins and gave them permissions.
+- SuperAdmin can Manage region, City, pricingList , University, categories, companies, contracts and Authorized Persons .
+- SuperAdmin edit/ stop and show all posts.
+- Exports users, companiesm posts reports in excelSheet.
 - Secure against Cross-Site Request Forgery (CSRF) attacks.
-- Responsive and elegant UI.
-- RESTful API endpoints.
-- Unit tests.
-- Database migrations.
-
+- Filtering by name, registerOn, applyFrom, active users reports.
+- Filtering by name, registerOn, apply, totalPayments and Plan Companies reports.
+- Filtering by title and registerOn posts reports.
+- Responsive UI.
+- Database Postgres.
+### technologies:
+### Back-End :
+- Laravel 7.2, MVC Architecture Pattern.
+### Front-End :
+ - AdminLTE, template engin(blade).
+ ### Database :
+ - postgress.
+ ### Package:
+ - laravel Debugbar, mattwebsite, laratrust, laravelcollective.
+ 
 ### Usage:
-1. Clone this repository to your desktop, go to the ```flasky``` directory and create a new virtual environment to create isolated Python environment.
-**Note: I highly recommend using [Virtualenv](https://virtualenv.pypa.io/en/latest/).**
+1. Clone this repository to your desktop, go to the ```Fursetek``` directory.
 
 2. Install the application requirements:
-```python
-pip install -r requirements\dev.txt
+```composer
+ install 
+ php artisan key:generate
 ```
 
-2. Create these environnement variables:
-**Note: MAIL_USERNAME and MAIL_PASSWORD environnement variables are necessary for sending confirmation emails to the newly registered users.**
-```python
-set FLASK_APP=run.py
-set MAIL_USERNAME=<your-gmail-email-address>
-set MAIL_PASSWORD=<your-gmail-password>
-```
-
-3. Run the CLI ```deploy```command to create the database:
-```python
-flask deploy
-```
-4. If you want to populate the database with some dummy data type:
-```python
-flask shell
->>> from app.fake import users, posts, follows, comments
->>> users()
->>> posts()
->>> follows()
->>> comments()
-```
-5. Run the application and go to [localhost:5000](http://127.0.0.1:5000/) to see the application running:
-```python
-flask run
-```
-
-6. You can run the unit tests using the CLI ```test```command:
-```python
-flask test
-```
+3. Run the application and go to [localhost:8000](localhost/fursetek/admin/login) to see the application running
 
 ### License:
-This software is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+This software is licensed under the [MIT License](https://laravel-guide.readthedocs.io/en/latest/license/).
